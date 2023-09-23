@@ -1,70 +1,164 @@
-# Getting Started with Create React App
+ <a name="readme-top">Bookstore</a>
+# 📗 Table of Contents
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+- [📗 Table of Contents](#-table-of-contents)
+- [📖 \[bookstore\] ](#-bookstore-)
+  - [Learning objectives ](#learning-objectives-)
+  - [🛠 Built With ](#-built-with-)
+    - [Key Features ](#key-features-)
+    - [Home page](#home-page)
+  - [🚀 Live Demo and video ](#-live-demo-and-video-)
+  - [💻 Getting Started ](#-getting-started-)
+  - [Test](#test)
+    - [Prerequisites](#prerequisites)
+    - [Install](#install)
+  - [👥 Authors ](#-authors-)
+  - [🔭 Future Features ](#-future-features-)
+    - [Key Features ](#key-features--1)
+  - [🤝 Contributing ](#-contributing-)
+  - [⭐️ Show your support ](#️-show-your-support-)
+  - [🙏 Acknowledgments ](#-acknowledgments-)
+  - [📝 License ](#-license-)
 
-## Available Scripts
+<!-- PROJECT DESCRIPTION -->
 
-In the project directory, you can run:
+# 📖 [bookstore] <a name="about-project"></a>
 
-### `npm start`
+**[bookstore]** This is a simple book store app built with React js. It uses the Google Books API to search for books and display them. It also uses react-router to navigate between pages.
+## Learning objectives <a name="objectives"></a>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- Use React Router.
+- Use React components.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 🛠 Built With <a name="built-with"></a>
+- React
+- JavaScript
+- React
+- JSX
+- CSS
+  
+<!-- Features -->
 
-### `npm test`
+### Key Features <a name="key-features"></a>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+-[ ] Vite React App
+-[ ] reusable components: /components.
+-[ ] Setup your router inside of <App>
+-[ ] Add 2 routes in your application, each should render a page component:
+- /
+- /categories
+-[ ] Contains individual book state, as well as a button to delete the book
+-[ ] Contains a list to renders individual books
+-[ ] Contains a form to create new books
+-[ ] Contains a navigation to link to the 2 routes you created
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-### `npm run build`
+<!-- LIVE DEMO AND THE DEPLOY -->
+### Home page
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+<!-- GETTING STARTED -->
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 💻 Getting Started <a name="getting-started"></a>
 
-### `npm run eject`
+To get a local copy up and running follow these simple example steps.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Clone the project unto your local machine
+Open the project with your code editor
+Run npm install to install all the dependencies
+Run npm start to start the server
+Open http://localhost:3000 to view it in the browser.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Test
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+For tracking linter errors locally you need to follow these steps:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- After cloning the project you need to run this command
+  > npm install
+   `This command will download all the dependencies of the project`
 
-## Learn More
+- For tracking the linter errors in HTML file run:
+  > npx hint .
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- For tracking the linter errors in CSS file run:
+  > npx stylelint "**/*.{css,scss}"
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+  - And For tracking the linter errors in JavaScript file run:
+  > npx eslint .
 
-### Code Splitting
+### Prerequisites
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- Basic knowledge of HTML, CSS, and Javascript
+- Basic knowledge of Git and Github
+- Basic knowledge of Webpack
+- Basic knowledge of React
+- Basic knowledge of APIs
 
-### Analyzing the Bundle Size
+To get the output of our project make sure you have google Chrome, Mozila or any other browser installed.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### Install 
 
-### Making a Progressive Web App
+> In order to install this project please go through the following steps:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- Clone the repository
+- Run `npm install`
+- Run `npm run dev` to start the server
+- Run `npm run build` to build the project
 
-### Advanced Configuration
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+<!-- AUTHORS -->
 
-### Deployment
+## 👥 Authors <a name="authors"></a>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+👤 **Hydaline**
 
-### `npm run build` fails to minify
+- GitHub: [https://github.com/hydaline-code]
+- LinkedIn: [https://www.linkedin.com/in/hydaline-djougang-0851aa21a/]
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- FUTURE FEATURES -->
+
+## 🔭 Future Features <a name="future-features"></a>
+
+### Key Features <a name="key-features"></a>
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- CONTRIBUTING -->
+
+## 🤝 Contributing <a name="contributing"></a>
+
+Contributions, issues, and feature requests are welcome!
+
+Feel free to check the [issues page](https://github.com/hydaline-code/Bookstore/issues).
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- SUPPORT -->
+
+## ⭐️ Show your support <a name="support"></a>
+
+Give a ⭐️ if you like this project!
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- ACKNOWLEDGEMENTS -->
+
+## 🙏 Acknowledgments <a name="acknowledgements"></a>
+
+- Hat tip to [Microvers](www.microverse.org)  and all the staff
+
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- LICENSE -->
+
+## 📝 License <a name="license"></a>
+
+This project is [MIT](./LICENSE) licensed.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
