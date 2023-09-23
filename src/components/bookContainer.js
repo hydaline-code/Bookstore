@@ -32,7 +32,7 @@ function BookContainer() {
   return (
     <div className="panel-bg">
       <Navigation />
-      
+
       <BookList books={books} onDelete={handleDeleteBook} />
       <BookForm onAdd={handleAddBook} />
     </div>

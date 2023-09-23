@@ -68,30 +68,29 @@
   box-shadow: 0 0 60px 0 rgba(0, 0, 0, 0.05);
   background-color: #fafafa;
   border: solid 1px rgb(48, 48, 48);
- 
 }
 
 .Bookstore-CMS {
   height: 2.313rem;
   margin-top: 3rem;
-  font-family: Montserrat;
   font-size: 1.5rem;
   font-weight: bold;
   font-stretch: normal;
   font-style: normal;
   letter-spacing: normal;
-  color: #0290ff
+  color: #0290ff;
 }
 
 /* BookList.css */
 
 .booklist {
   display: flex;
- flex-direction: column;
- overflow: auto;
+  flex-direction: column;
+  overflow: auto;
 }
 
 .book-card {
+  display: flex;
   background-color: hsla(0, 0%, 95%, 0.92);
   text-align: left;
   border-radius: 4px;
@@ -99,9 +98,6 @@
   align-items: center;
   justify-content: space-evenly;
   border-bottom: 1.5px solid #e89c9c;
-  font-family: RobotoSlab;
-  display: flex;
-  justify-content: space-evenly;
 }
 
 .book-card h3 {
@@ -124,17 +120,29 @@
   cursor: pointer;
 }
 
+.addform button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  width: 10%;
+  height: 2rem;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-left: 0.3rem;
+  margin-right: 0.3rem;
+}
+
 .book-card button:hover {
   background-color: #d9363e;
 }
+
 /* BookForm.css */
 
 .addform {
   position: absolute;
   top: 79.5%;
- border-top: solid 1px salmon;
+  border-top: solid 1px salmon;
   background-color: #efdfdf;
-  
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   width: 88.1%;
 }
@@ -157,30 +165,17 @@
   margin-left: 0.5rem;
 }
 
-
 .addform input:nth-child(1) {
   width: 60%;
 }
+
 .addform input:nth-child(2) {
   width: 30%;
-}
-
-.addform button {
-  background-color: #007bff;
-  color: white;
-  border: none;
-  width: 10%;
-  height: 2rem;
-  border-radius: 4px;
-  cursor: pointer;
-  margin-left: 0.3rem;
-  margin-right: 0.3rem;
 }
 
 .addform button:hover {
   background-color: #0056b3;
 }
-
 
 .book-details {
   display: flex;
@@ -199,11 +194,10 @@
   color: #666;
 }
 
- .progress-bar {
- display: flex;
-  margin: 0 0rem 0.6rem 10rem;
-} 
-
+.progress-bar {
+  display: flex;
+  margin: 0 0 0.6rem 10rem;
+}
 
 .progress-percentage {
   font-size: 12px;
@@ -240,9 +234,7 @@
 }
 
 .-Percent-Complete {
- 
   margin: 0.063rem 5.75rem 0 0.688rem;
-  font-family: Montserrat;
   font-size: 2rem;
   font-weight: normal;
   font-stretch: normal;
@@ -252,12 +244,11 @@
   color: var(--black-two);
 }
 
-
-
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }

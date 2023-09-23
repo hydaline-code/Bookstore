@@ -20,7 +20,7 @@ function BookForm({ onAdd }) {
   };
 
   return (
-    <div className='addform'>
+    <div className="addform">
       <h4>ADD A NEW BOOK</h4>
       <form onSubmit={handleSubmit}>
         <input
@@ -41,4 +41,4 @@ function BookForm({ onAdd }) {
   );
 }
 
-export default BookForm; 
+export default BookForm;
