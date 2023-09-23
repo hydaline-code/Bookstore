@@ -1,0 +1,255 @@
+.App {
+  text-align: center;
+  position: relative;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.page h1 {
+  margin-bottom: 10px;
+  font-size: 18px;
+  font-weight: bold;
+  background: linear-gradient(45deg, #b3936e, #fb4286);
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  background-color: #fff;
+  height: 3rem;
+  border-bottom: solid rgb(137, 137, 137) 2px;
+  padding-top: 1rem;
+}
+
+.navbar {
+  margin-left: 2rem;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #121212;
+  margin: 1rem 2.938rem 0.125rem 1rem;
+  font-size: 11.5px;
+}
+
+.navbar :nth-child(2) {
+  margin-right: 0;
+}
+
+.panel-bg {
+  width: 70.5rem;
+  height: 30.563rem;
+  margin: 0 2.5rem 2rem 4rem;
+  border-radius: 4px;
+  box-shadow: 0 0 60px 0 rgba(0, 0, 0, 0.05);
+  background-color: #fafafa;
+  border: solid 1px rgb(48, 48, 48);
+}
+
+.Bookstore-CMS {
+  height: 2.313rem;
+  margin-top: 3rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  letter-spacing: normal;
+  color: #0290ff;
+}
+
+/* BookList.css */
+
+.booklist {
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+}
+
+.book-card {
+  display: flex;
+  background-color: hsla(0, 0%, 95%, 0.92);
+  text-align: left;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  align-items: center;
+  justify-content: space-evenly;
+  border-bottom: 1.5px solid #e89c9c;
+}
+
+.book-card h3 {
+  margin: 0;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.book-card p {
+  margin: 8px 0;
+  color: #4386bf;
+}
+
+.book-card button {
+  background-color: #4386bf;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.addform button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  width: 10%;
+  height: 2rem;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-left: 0.3rem;
+  margin-right: 0.3rem;
+}
+
+.book-card button:hover {
+  background-color: #d9363e;
+}
+
+/* BookForm.css */
+
+.addform {
+  position: absolute;
+  top: 79.5%;
+  border-top: solid 1px salmon;
+  background-color: #efdfdf;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 88.1%;
+}
+
+.addform h4 {
+  margin-bottom: 10px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.addform form {
+  display: flex;
+}
+
+.addform input {
+  padding: 8px 12px;
+  margin-bottom: 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-left: 0.5rem;
+}
+
+.addform input:nth-child(1) {
+  width: 60%;
+}
+
+.addform input:nth-child(2) {
+  width: 30%;
+}
+
+.addform button:hover {
+  background-color: #0056b3;
+}
+
+.book-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.book-title {
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
+.book-author {
+  font-size: 14px;
+  color: #666;
+}
+
+.progress-bar {
+  display: flex;
+  margin: 0 0 0.6rem 10rem;
+}
+
+.progress-percentage {
+  font-size: 12px;
+  color: #666;
+  margin-left: 5px;
+}
+
+.Oval-2 {
+  width: 4.25rem;
+  height: 4.25rem;
+  border-style: solid;
+  border-width: 5px;
+  border-image-source: linear-gradient(to bottom, green, #030303);
+  border-image-slice: 1;
+}
+
+.chapter-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.chapter-label,
+.lesson-label {
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.chapter-info,
+.lesson-info {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.-Percent-Complete {
+  margin: 0.063rem 5.75rem 0 0.688rem;
+  font-size: 2rem;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: var(--black-two);
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
