@@ -41,7 +41,7 @@
 
 ### Key Features <a name="key-features"></a>
 
--[ ] Vite React App
+-[ ] Create React App
 -[ ] reusable components: /components.
 -[ ] Setup your router inside of <App>
 -[ ] Add 2 routes in your application, each should render a page component:
@@ -150,7 +150,7 @@ Give a ⭐️ if you like this project!
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-- Hat tip to [Microvers](www.microverse.org)  and all the staff
+- Hat tip to [Microverse](www.microverse.org)  and all the staff
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
