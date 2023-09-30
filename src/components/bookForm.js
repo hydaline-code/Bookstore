@@ -1,47 +1,3 @@
-// import React, { useState } from 'react';
-
-// function BookForm({ onAdd }) {
-//   const [title, setTitle] = useState('');
-//   const [author, setAuthor] = useState('');
-
-//   const handleSubmit = (e) => {
-//     e.preventDefault();
-//     // Create new book object
-//     const newBook = {
-//       id: Math.random(),
-//       title,
-//       author,
-//     };
-//     // Call the onAdd function with the new book
-//     onAdd(newBook);
-//     // Reset the form fields
-//     setTitle('');
-//     setAuthor('');
-//   };
-
-//   return (
-//     <div className="addform">
-//       <h4>ADD A NEW BOOK</h4>
-//       <form onSubmit={handleSubmit}>
-//         <input
-//           type="text"
-//           placeholder="Title"
-//           value={title}
-//           onChange={(e) => setTitle(e.target.value)}
-//         />
-//         <input
-//           type="text"
-//           placeholder="Author"
-//           value={author}
-//           onChange={(e) => setAuthor(e.target.value)}
-//         />
-//         <button type="submit">Add</button>
-//       </form>
-//     </div>
-//   );
-// }
-
-// export default BookForm;
 
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
@@ -63,13 +19,12 @@ function BookForm({ books}) {
     };
     // Dispatch the addBook action with the new book data
     dispatch(addBook(newBook));
-    // Reset the form fields
+    // clear the form fields after inputs 
     setTitle('');
     setAuthor('');
   };
 
   const handleAddBook = (newBook) => {
-    // Dispatch the addBook action with the new book object
     dispatch(addBook(newBook));
   };
 
