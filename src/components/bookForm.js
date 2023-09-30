@@ -1,10 +1,9 @@
-
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { addBook } from '../redux/books/booksSlice'; 
 import { v4 as uuidv4 } from 'uuid';
+import { addBook } from '../redux/books/booksSlice';
 
-function BookForm({ books}) {
+function BookForm() {
   const dispatch = useDispatch();
   const [title, setTitle] = useState('');
   const [author, setAuthor] = useState('');
@@ -19,7 +18,7 @@ function BookForm({ books}) {
     };
     // Dispatch the addBook action with the new book data
     dispatch(addBook(newBook));
-    // clear the form fields after inputs 
+    // clear the form fields after inputs
     setTitle('');
     setAuthor('');
   };
@@ -44,7 +43,7 @@ function BookForm({ books}) {
           value={author}
           onChange={(e) => setAuthor(e.target.value)}
         />
-        <button type="submit"  onAdd={handleAddBook}>Add</button>
+        <button type="submit" onClick={handleAddBook}>Add</button>
       </form>
     </div>
   );

@@ -1,7 +1,6 @@
-
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import PropTypes from 'prop-types'; // Import PropTypes
+import PropTypes from 'prop-types';
 import { removeBook } from '../redux/books/booksSlice';
 
 function BookCard({ title, author, itemId }) {
@@ -15,33 +14,33 @@ function BookCard({ title, author, itemId }) {
     dispatch(removeBook(itemId));
   };
 
-
   return (
     <div className="book-card">
       <div className="book-details">
         <h2 className="book-title">{title}</h2>
         <p className="book-author">{author}</p>
         <div className="bookbuttons">
-        <button className="leftButton" type="button">Comment</button>
-        <button type="button" 
-        onClick={() => handleRemove(itemId)}>
-          Delete
+          <button className="leftButton" type="button">Comment</button>
+          <button
+            type="button"
+            onClick={() => handleRemove(itemId)}
+          >
+            Delete
           </button>
           <button className="leftButton" type="button">Edit</button>
-          </div>
+        </div>
       </div>
 
       <div className="progress-bar">
         <div className="Oval-2" />
         <span className="-Percent-Complete Text-Style-5">
-        
+
           {progress}
           %
           <p className="state">completed</p>
         </span>
-       
+
       </div>
-      
 
       <div className="chapter-details">
         <span className="chapter-label">Current Chapter:</span>

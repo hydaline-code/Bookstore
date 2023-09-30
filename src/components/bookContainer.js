@@ -1,9 +1,9 @@
-
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import BookList from './bookList';
 import BookForm from './bookForm';
-import { addBook, removeBook } from '../redux/books/booksSlice'; 
+import Navigation from './navigation';
+import { addBook, removeBook } from '../redux/books/booksSlice';
 
 function BookContainer() {
   // Use useSelector to access the books data from the Redux store
@@ -29,9 +29,9 @@ function BookContainer() {
       </div>
 
       <div className="panel">
-      <BookForm onAdd={handleAddBook} />
-    </div>
-     
+        <BookForm onAdd={handleAddBook} />
+      </div>
+
     </div>
   );
 }
