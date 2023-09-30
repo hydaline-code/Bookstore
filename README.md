@@ -29,13 +29,14 @@
 
 - Use React Router.
 - Use React components.
+-Add Redux to the project
 
 ## 🛠 Built With <a name="built-with"></a>
 - React
-- JavaScript
-- React
 - JSX
 - CSS
+-Redux
+
   
 <!-- Features -->
 
@@ -45,12 +46,13 @@
 -[ ] reusable components: /components.
 -[ ] Setup your router inside of <App>
 -[ ] Add 2 routes in your application, each should render a page component:
-- /
-- /categories
 -[ ] Contains individual book state, as well as a button to delete the book
 -[ ] Contains a list to renders individual books
 -[ ] Contains a form to create new books
 -[ ] Contains a navigation to link to the 2 routes you created
+-[ ] Implement Redux Toolkit inside of a React application
+-[ ] Setup a Redux store
+-[ ] Create a slice to save your state and reducers
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- LIVE DEMO AND THE DEPLOY -->
