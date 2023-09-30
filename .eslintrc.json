@@ -18,11 +18,9 @@
     "react/jsx-filename-extension": ["warn", { "extensions": [".js", ".jsx"] }],
     "react/react-in-jsx-scope": "off",
     "import/no-unresolved": "off",
-    "react/prop-types": "off",
-    "no-unused-vars": "off",
     "no-shadow": "off"
   },
-  "overrides": [ 
+  "overrides": [
     {
        // feel free to replace with your preferred file pattern - eg. 'src/**/*Slice.js' or 'redux/**/*Slice.js'
       "files": ["src/**/*Slice.js"],
