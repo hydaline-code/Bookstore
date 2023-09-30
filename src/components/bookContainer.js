@@ -1,40 +1,37 @@
-// import React from 'react';
-// import Navigation from './navigation';
-// import Book from './book';
-
-// function BookContainer() {
-//   return (
-//     <div className="panel-bg">
-//         <Navigation />
-//     <Book />
-//     </div>
-//   );
-// }
-
-// export default BookContainer;
-
-import React, { useState } from 'react';
-import Navigation from './navigation';
+import React from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import BookList from './bookList';
 import BookForm from './bookForm';
+import Navigation from './navigation';
+import { addBook, removeBook } from '../redux/books/booksSlice';
 
 function BookContainer() {
-  const [books, setBooks] = useState([]);
+  // Use useSelector to access the books data from the Redux store
+  const books = useSelector((state) => state.books);
+
+  // Get the dispatch function from Redux
+  const dispatch = useDispatch();
 
   const handleAddBook = (newBook) => {
-    setBooks([...books, newBook]);
+    dispatch(addBook(newBook));
   };
 
-  const handleDeleteBook = (bookId) => {
-    setBooks(books.filter((book) => book.id !== bookId));
+  const handleDeleteBook = (book) => {
+    dispatch(removeBook(book));
   };
 
   return (
     <div className="panel-bg">
       <Navigation />
 
-      <BookList books={books} onDelete={handleDeleteBook} />
-      <BookForm onAdd={handleAddBook} />
+      <div className="scrollable-container">
+        <BookList books={books} onDelete={handleDeleteBook} />
+      </div>
+
+      <div className="panel">
+        <BookForm onAdd={handleAddBook} />
+      </div>
+
     </div>
   );
 }

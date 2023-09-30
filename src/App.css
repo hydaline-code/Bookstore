@@ -100,6 +100,12 @@
   border-bottom: 1.5px solid #e89c9c;
 }
 
+.bookbuttons button {
+  margin-left: 0.5rem;
+  font-size: 10px;
+  width: 4rem;
+}
+
 .book-card h3 {
   margin: 0;
   font-size: 28px;
@@ -133,14 +139,14 @@
 }
 
 .book-card button:hover {
-  background-color: #d9363e;
+  background-color: #396475;
 }
 
 /* BookForm.css */
 
 .addform {
   position: absolute;
-  top: 79.5%;
+  top: 99.5%;
   border-top: solid 1px salmon;
   background-color: #efdfdf;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -197,26 +203,86 @@
 .progress-bar {
   display: flex;
   margin: 0 0 0.6rem 10rem;
+  position: relative;
 }
 
 .progress-percentage {
-  font-size: 12px;
+  font-size: 10px;
   color: #666;
   margin-left: 5px;
 }
 
-.Oval-2 {
+.state {
+  position: absolute;
+  top: 16px;
+}
+
+/* .Oval-2 {
   width: 4.25rem;
   height: 4.25rem;
   border-style: solid;
   border-width: 5px;
   border-image-source: linear-gradient(to bottom, green, #030303);
   border-image-slice: 1;
+  border-radius: 50%;
+} */
+
+/* .Oval-2 {
+  width: 4.25rem;
+  height: 4.25rem;
+  border-radius: 50%;
+  box-shadow:
+    0 3px gray 0 5px green;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.progress-percentage {
+  font-size: 12px;
+  color: #666;
+  margin-left: 5px;
+} */
+
+/* .Oval-2 {
+  width: 4.25rem;
+  height: 4.25rem;
+  position: relative;
+  border-radius: 50%;
+  background: conic-gradient(
+    green 0% 50%,
+    transparent 50% 100%
+  );
+  box-shadow: 0 0 0 5px #030303;
+  justify-content: center;
+  align-items: center;
+}
+
+.progress-percentage {
+  font-size: 12px;
+  color: #666;
+  margin-left: 5px;
+} */
+
+.Oval-2 {
+  width: 3.25rem;
+  height: 3.25rem;
+  border-radius: 50%;
+  border: 5px solid gray;
+  border-image:
+    conic-gradient(
+      rgb(34, 83, 198) 0% 50%,
+      gray 50% 100%
+    ) 1;
 }
 
 .chapter-details {
   display: flex;
   flex-direction: column;
+}
+
+.bookbuttons {
+  display: flex;
 }
 
 .chapter-label,
@@ -231,6 +297,11 @@
   font-size: 14px;
   color: #666;
   margin-bottom: 10px;
+}
+
+.scrollable-container {
+  overflow-y: auto; /* Add a vertical scrollbar when content exceeds container height */
+  max-height: 400px; /* Define a maximum height for the container */
 }
 
 .-Percent-Complete {

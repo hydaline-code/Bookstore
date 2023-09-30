@@ -7,7 +7,6 @@
   - [🛠 Built With ](#-built-with-)
     - [Key Features ](#key-features-)
     - [Home page](#home-page)
-  - [🚀 Live Demo and video ](#-live-demo-and-video-)
   - [💻 Getting Started ](#-getting-started-)
   - [Test](#test)
     - [Prerequisites](#prerequisites)
@@ -42,23 +41,31 @@
 
 ### Key Features <a name="key-features"></a>
 
--[ ] Create React App
--[ ] reusable components: /components.
--[ ] Setup your router inside of <App>
--[ ] Add 2 routes in your application, each should render a page component:
--[ ] Contains individual book state, as well as a button to delete the book
--[ ] Contains a list to renders individual books
--[ ] Contains a form to create new books
--[ ] Contains a navigation to link to the 2 routes you created
--[ ] Implement Redux Toolkit inside of a React application
--[ ] Setup a Redux store
--[ ] Create a slice to save your state and reducers
+- Create React App
+
+- Reusable components: /components.
+
+- Setup your router inside of <App>
+
+- Add 2 routes in your application, each should render a page component
+
+- Contains individual book state, as well as a button to delete the book
+
+- Contains a list to renders individual books
+
+- Contains a form to create new books
+
+- Contains a navigation to link to the 2 routes you created
+
+- Implement Redux Toolkit inside of a React application
+
+- Setup a Redux store
+
+- Create a slice to save your state and reducers
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- LIVE DEMO AND THE DEPLOY -->
-### Home page
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- GETTING STARTED -->
 
@@ -66,11 +73,11 @@
 
 To get a local copy up and running follow these simple example steps.
 
-Clone the project unto your local machine
-Open the project with your code editor
-Run npm install to install all the dependencies
-Run npm start to start the server
-Open http://localhost:3000 to view it in the browser.
+- Clone the project unto your local machine
+- Open the project with your code editor
+- Run npm install to install all the dependencies
+- Run npm start to start the server
+- Open http://localhost:3000 to view it in the browser.
 
 ## Test
 
@@ -122,11 +129,11 @@ To get the output of our project make sure you have google Chrome, Mozila or any
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- FUTURE FEATURES -->
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-### Key Features <a name="key-features"></a>
+- Make the app responsive with  the mobile version of the App
+- User Authentication for the login 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
