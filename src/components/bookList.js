@@ -21,23 +21,19 @@
 
 // export default BookList;
 
+
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { fetchBooksAsync, removeBookAsync } from '../redux/books/booksSlice';
+import { getBookItems } from '../redux/books/booksSlice';
 import Book from './book';
 
 function BookList() {
-  const books = useSelector((state) => state.books);
+  const books = useSelector((state) => state.books.books);
   const dispatch = useDispatch();
-  const appId = 'ziBZnIbKCK5TSoqAhCmP'; // Replace with your API app ID
 
   useEffect(() => {
-    dispatch(fetchBooksAsync(appId));
-  }, [dispatch, appId]);
-
-  const handleRemove = (itemId) => {
-    dispatch(removeBookAsync({ appId, itemId }));
-  };
+    dispatch(getBookItems()); // Dispatch the getBookItems action when the component mounts
+  }, [dispatch]);
 
   return (
     <div className="booklist">
@@ -47,7 +43,6 @@ function BookList() {
           title={book.title}
           author={book.author}
           itemId={book.itemId}
-          handleRemove={handleRemove}
         />
       ))}
     </div>

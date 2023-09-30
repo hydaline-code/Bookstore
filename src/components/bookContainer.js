@@ -43,23 +43,23 @@ import { useSelector, useDispatch } from 'react-redux';
 import BookList from './bookList';
 import BookForm from './bookForm';
 import Navigation from './navigation';
-import api from '../redux/bookstoreApi';
-import { fetchBooksAsync, addBookAsync, removeBookAsync } from '../redux/books/booksSlice';
+import { getBookItems, addBook, removeBook } from '../redux/books/booksSlice';
 
-function BookContainer({ appId }) {
-  const books = useSelector((state) => state.books);
+function BookContainer() {
+  const books = useSelector((state) => state.books.books);
   const dispatch = useDispatch();
+  const appId = 'ziBZnIbKCK5TSoqAhCmP'; // Replace with your actual API app ID
 
   useEffect(() => {
-    dispatch(fetchBooksAsync(appId));
-  }, [dispatch, appId]);
+    dispatch(getBookItems());
+  }, [dispatch]);
 
   const handleAddBook = (newBook) => {
-    dispatch(addBookAsync({ appId, book: newBook }));
+    dispatch(addBook(newBook));
   };
 
   const handleDeleteBook = (itemId) => {
-    dispatch(removeBookAsync({ appId, itemId }));
+    dispatch(removeBook(itemId));
   };
 
   return (

@@ -54,25 +54,20 @@
 
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { v4 as uuidv4 } from 'uuid';
-import { addBookAsync } from '../redux/books/booksSlice';
+import { addBook } from '../redux/books/booksSlice';
 
-function BookForm({ appId }) {
+function BookForm() {
   const dispatch = useDispatch();
   const [title, setTitle] = useState('');
   const [author, setAuthor] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Create new book object with a unique itemId
     const newBook = {
-      itemId: uuidv4(),
       title,
       author,
     };
-    // Dispatch the addBookAsync thunk with the app ID and new book data
-    dispatch(addBookAsync({ appId, book: newBook }));
-    // Clear the form fields after inputs
+    dispatch(addBook(newBook));
     setTitle('');
     setAuthor('');
   };
