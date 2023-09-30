@@ -1,5 +1,5 @@
-import BookList from './BookList.js';
-import BookForm from './BookForm.js';
+import BookList from './BookList';
+import BookForm from './BookForm';
 
 const Books = () => (
   <>
