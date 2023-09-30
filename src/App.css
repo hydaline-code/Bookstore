@@ -100,6 +100,12 @@
   border-bottom: 1.5px solid #e89c9c;
 }
 
+.bookbuttons button {
+  margin-left: 0.5rem;
+  font-size: 10px;
+  width: 4rem;
+}
+
 .book-card h3 {
   margin: 0;
   font-size: 28px;
@@ -133,7 +139,7 @@
 }
 
 .book-card button:hover {
-  background-color: #d9363e;
+  background-color: #396475;
 }
 
 /* BookForm.css */
@@ -200,7 +206,7 @@
   position: relative;
 }
 
-  .progress-percentage {
+.progress-percentage {
   font-size: 10px;
   color: #666;
   margin-left: 5px;
@@ -225,7 +231,7 @@
   width: 4.25rem;
   height: 4.25rem;
   border-radius: 50%;
-  box-shadow: 
+  box-shadow:
     0 3px gray 0 5px green;
   display: flex;
   justify-content: center;
@@ -244,10 +250,10 @@
   position: relative;
   border-radius: 50%;
   background: conic-gradient(
-    green 0% 50%, 
+    green 0% 50%,
     transparent 50% 100%
   );
-  box-shadow: 0 0 0 5px #030303; 
+  box-shadow: 0 0 0 5px #030303;
   justify-content: center;
   align-items: center;
 }
@@ -263,12 +269,12 @@
   height: 3.25rem;
   border-radius: 50%;
   border: 5px solid gray;
-  border-image: conic-gradient(
-    rgb(34, 83, 198) 0% 50%, 
-   gray 50% 100%
-  ) 1;
+  border-image:
+    conic-gradient(
+      rgb(34, 83, 198) 0% 50%,
+      gray 50% 100%
+    ) 1;
 }
-
 
 .chapter-details {
   display: flex;
@@ -277,12 +283,6 @@
 
 .bookbuttons {
   display: flex;
-}
-
-.bookbuttons button {
-  margin-left: 0.5rem;
-  font-size: 10px;
-  width: 4rem;
 }
 
 .chapter-label,
@@ -304,7 +304,6 @@
   max-height: 400px; /* Define a maximum height for the container */
 }
 
-
 .-Percent-Complete {
   margin: 0.063rem 5.75rem 0 0.688rem;
   font-size: 2rem;
@@ -315,7 +314,6 @@
   letter-spacing: normal;
   color: var(--black-two);
 }
-
 
 @keyframes App-logo-spin {
   from {
