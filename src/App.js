@@ -1,22 +1,23 @@
-import React from 'react';
-import {
-  BrowserRouter as Router, Route, Routes, NavLink,
-} from 'react-router-dom';
-import './App.css';
-import Bookpage from './pages/bookpage';
-import CategoriesPage from './pages/categoriespage';
+import { React } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Books from './components/Books';
+import MenuLink from './components/MenuLink';
+import Categories from './pages/Categories';
+import Book from './pages/BookPage';
+import './styles/App.css';
 
 function App() {
   return (
-    <Router>
-      <div className="App">
-
+    <div className="wrapper">
+      <Router>
+        <MenuLink />
         <Routes>
-          <Route path="/" element={<Bookpage />} />
-          <Route path="/categories" element={<CategoriesPage />} />
+          <Route path="/" element={<Books />} />
+          <Route path="/BookPage" element={<Book />} />
+          <Route path="/categories" element={<Categories />} />
         </Routes>
-      </div>
-    </Router>
+      </Router>
+    </div>
   );
 }
 

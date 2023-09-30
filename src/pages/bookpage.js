@@ -1,14 +1,9 @@
-import React from 'react';
-import BookContainer from '../components/bookContainer';
-
-function Bookpage() {
+function Book() {
   return (
-    <div className="page">
-      <h1>Welcome to the BookStore with React</h1>
-      <BookContainer />
-
+    <div>
+      <h2>Book Page</h2>
     </div>
   );
 }
 
-export default Bookpage;
+export default Book;
