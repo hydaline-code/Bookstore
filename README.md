@@ -28,7 +28,7 @@
 
 - Use React Router.
 - Use React components.
--Add Redux to the project
+- Add Redux to the project
 
 ## 🛠 Built With <a name="built-with"></a>
 - React
@@ -62,6 +62,9 @@
 - Setup a Redux store
 
 - Create a slice to save your state and reducers
+
+- Connect to an  API for backend
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- LIVE DEMO AND THE DEPLOY -->
