@@ -5,16 +5,35 @@ const apiEndpoint = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/
 const api = axios.create();
 
 // Create async thunk for fetching books
+// export const fetchBooksAsync = createAsyncThunk('books/fetchBooks', async () => {
+//   const response = await api.get(apiEndpoint);
+//   return response.data;
+// });
+
 export const fetchBooksAsync = createAsyncThunk('books/fetchBooks', async () => {
-  const response = await api.get(apiEndpoint);
-  return response.data;
+  try {
+    const response = await api.get(apiEndpoint);
+    const booksData = response.data;
+    const booksArray = Object.values(booksData).flatMap((bookArray) => bookArray);
+
+    return booksArray;
+  } catch (error) {
+    console.error('Error fetching books:', error);
+    throw error;
+  }
 });
 
 // Create async thunk for adding a book
 export const addBookAsync = createAsyncThunk('books/addBook', async (book) => {
-  const response = await api.post(apiEndpoint, book);
-  return response.data;
+  try {
+    const response = await api.post(apiEndpoint, { book });
+    return response.data;
+  } catch (error) {
+    console.error('Error adding book:', error);
+    throw error; // Rethrow the error to handle it in the component
+  }
 });
+
 
 // Create async thunk for removing a book
 export const removeBookAsync = createAsyncThunk('books/removeBook', async (bookId) => {
@@ -36,7 +55,7 @@ const booksSlice = createSlice({
         state.filter((book) => book.id !== action.payload)
       )
       .addCase(fetchBooksAsync.pending, (state) => {
-        // Handle pending state if needed
+        
       })
       .addCase(fetchBooksAsync.rejected, (state) => {
         // Handle rejected state if needed

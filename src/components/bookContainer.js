@@ -43,7 +43,6 @@ import { useSelector, useDispatch } from 'react-redux';
 import BookList from './bookList';
 import BookForm from './bookForm';
 import Navigation from './navigation';
-import api from '../redux/bookstoreApi';
 import { fetchBooksAsync, addBookAsync, removeBookAsync } from '../redux/books/booksSlice';
 
 function BookContainer({ appId }) {
