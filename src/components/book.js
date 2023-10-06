@@ -1,13 +1,12 @@
-
 import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-//import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import { fetchBooksAsync, removeBookAsync } from '../redux/books/booksSlice';
 
 function BookCard({ title, author, itemId }) {
-  console.log("Title:", title);
-  console.log("Author:", author);
-  console.log("bookid", itemId);
+  console.log('Title:', title);
+  console.log('Author:', author);
+  console.log('bookid', itemId);
 
   const progress = 50;
   const currentChapter = 'Chapter 3';
@@ -43,7 +42,8 @@ function BookCard({ title, author, itemId }) {
       <div className="progress-bar">
         <div className="Oval-2" />
         <span className="-Percent-Complete Text-Style-5">
-          {progress}%
+          {progress}
+          %
           <p className="state">completed</p>
         </span>
       </div>

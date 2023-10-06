@@ -14,7 +14,7 @@ export const fetchBooksAsync = createAsyncThunk('books/fetchBooks', async () => 
   } catch (error) {
     console.error('Error fetching books:', error);
     throw error;
-  }
+  }
 });
 
 // Create async thunk for adding a book
@@ -29,9 +29,8 @@ export const addBookAsync = createAsyncThunk('books/addBook', async ({
   } catch (error) {
     console.error('Error adding book:', error);
     throw error;
-  }
+  }
 });
-
 
 export const removeBookAsync = createAsyncThunk('books/removeBook', async (itemId) => {
   try {
@@ -52,30 +51,29 @@ const booksSlice = createSlice({
       .addCase(fetchBooksAsync.fulfilled, (state, action) => action.payload)
       .addCase(addBookAsync.fulfilled, (state, action) => {
         state.push(action.payload);
-        
       })
       .addCase(removeBookAsync.fulfilled, (state, action) => {
         const itemIdToRemove = action.payload;
-        
+
         return state.filter((book) => book.itemId !== itemIdToRemove);
       })
       .addCase(fetchBooksAsync.pending, (state) => {
-      
+
       })
       .addCase(fetchBooksAsync.rejected, (state) => {
-        
+
       })
       .addCase(addBookAsync.pending, (state) => {
-       
+
       })
       .addCase(addBookAsync.rejected, (state) => {
-        
+
       })
       .addCase(removeBookAsync.pending, (state) => {
-       
+
       })
       .addCase(removeBookAsync.rejected, (state) => {
-        
+
       });
   },
 });

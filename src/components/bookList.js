@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchBooksAsync, removeBookAsync } from '../redux/books/booksSlice';
@@ -22,9 +21,9 @@ function BookList() {
     <div className="booklist">
       {booksArray.map((book) => (
         <BookCard
-        key={book.itemId}
-        title={book.title}  
-        author={book.author}
+          key={book.itemId}
+          title={book.title}
+          author={book.author}
           itemId={book.itemId}
           handleRemove={handleRemove}
         />
