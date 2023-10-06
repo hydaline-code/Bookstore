@@ -30,7 +30,7 @@ function BookForm() {
       setErrorMessage('');
       await dispatch(fetchBooksAsync());
     } catch (error) {
-      console.error('Error adding book:', error);
+      // console.error('Error adding book:', error);
       setErrorMessage('Error adding book. Please try again later.');
     }
   };
@@ -58,4 +58,4 @@ function BookForm() {
   );
 }
 
-export default BookForm;
+export default BookForm;

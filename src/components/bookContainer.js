@@ -6,7 +6,6 @@ import Navigation from './navigation';
 import { addBookAsync, removeBookAsync } from '../redux/books/booksSlice';
 
 function BookContainer() {
- 
   const books = useSelector((state) => state.books);
   const dispatch = useDispatch();
 
