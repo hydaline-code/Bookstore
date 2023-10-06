@@ -10,6 +10,7 @@ export const fetchBooksAsync = createAsyncThunk('books/fetchBooks', async () => 
     const booksData = response.data;
     // eslint-disable-next-line camelcase
     const booksArray = Object.keys(booksData).map((item_id) => ({
+          // eslint-disable-next-line camelcase
       item_id,
       ...booksData[item_id][0],
     }));
