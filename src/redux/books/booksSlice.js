@@ -50,12 +50,13 @@ const booksSlice = createSlice({
       .addCase(fetchBooksAsync.fulfilled, (state, action) => action.payload)
       .addCase(addBookAsync.fulfilled, (state, action) => {
         state.push(action.payload);
+        
       })
       .addCase(removeBookAsync.fulfilled, (state, action) =>
         state.filter((book) => book.id !== action.payload)
       )
       .addCase(fetchBooksAsync.pending, (state) => {
-        
+      
       })
       .addCase(fetchBooksAsync.rejected, (state) => {
         // Handle rejected state if needed
