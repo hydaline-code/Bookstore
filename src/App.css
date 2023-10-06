@@ -265,15 +265,12 @@
 } */
 
 .Oval-2 {
-  width: 3.25rem;
-  height: 3.25rem;
   border-radius: 50%;
-  border: 5px solid gray;
-  border-image:
-    conic-gradient(
-      rgb(34, 83, 198) 0% 50%,
-      gray 50% 100%
-    ) 1;
+  width: 4.25rem;
+  height: 4.25rem;
+  border: 5px solid #307bbe;
+  border-left-color: #e8e8e8;
+  transform: rotate(45deg);
 }
 
 .chapter-details {
@@ -313,36 +310,4 @@
   line-height: normal;
   letter-spacing: normal;
   color: var(--black-two);
-}
-
-.containerCreateBooks {
-  width: 90%;
-  height: 100px;
-  margin: 80px auto;
-  padding: 20px 0;
-}
-
-form {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 10px;
-  box-sizing: border-box;
-  border-radius: 12px;
-  border: none;
-}
-
-input {
-  width: 25%;
-  height: 40px;
-}
-
-.btn {
-  width: 20%;
-  height: 40px;
-  background-color: aqua;
-}
-
-.select {
-  width: 20%;
-  height: 40px;
 }

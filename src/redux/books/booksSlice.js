@@ -4,26 +4,40 @@ import axios from 'axios';
 const apiEndpoint = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/0vHIXZ1klByIbEZsVgzM/books';
 const api = axios.create();
 
+// export const fetchBooksAsync = createAsyncThunk('books/fetchBooks', async () => {
+//   try {
+//     const response = await api.get(apiEndpoint);
+//     const booksData = response.data;
+//     const booksArray = Object.values(booksData).flatMap((bookArray) => bookArray);
+
+//     return booksArray;
+//   } catch (error) {
+//     console.error('Error fetching books:', error);
+//     throw error;
+//   }
+// });
 export const fetchBooksAsync = createAsyncThunk('books/fetchBooks', async () => {
   try {
     const response = await api.get(apiEndpoint);
     const booksData = response.data;
-    const booksArray = Object.values(booksData).flatMap((bookArray) => bookArray);
-
+    const booksArray = Object.keys(booksData).map((item_id) => ({
+      item_id,
+      ...booksData[item_id][0],
+    }));
     return booksArray;
   } catch (error) {
     console.error('Error fetching books:', error);
     throw error;
-  }
+  }
 });
 
 // Create async thunk for adding a book
 export const addBookAsync = createAsyncThunk('books/addBook', async ({
-  title, author, category, itemId,
+  title, author, category, item_id,
 }) => {
   try {
     const response = await api.post(apiEndpoint, {
-      title, author, category, itemId,
+      title, author, category, item_id,
     });
     return response.data;
   } catch (error) {
@@ -32,9 +46,9 @@ export const addBookAsync = createAsyncThunk('books/addBook', async ({
   }
 });
 
-export const removeBookAsync = createAsyncThunk('books/removeBook', async (itemId) => {
+export const removeBookAsync = createAsyncThunk('books/removeBook', async (item_id) => {
   try {
-    const response = await api.delete(`${apiEndpoint}/${itemId}`);
+    const response = await api.delete(`${apiEndpoint}/${item_id}`);
     return response.data;
   } catch (error) {
     console.error('Error removing book:', error);
@@ -45,6 +59,7 @@ export const removeBookAsync = createAsyncThunk('books/removeBook', async (itemI
 const booksSlice = createSlice({
   name: 'books',
   initialState: [],
+  isLoading:true,
   reducers: {},
   extraReducers: (builder) => {
     builder
@@ -53,9 +68,10 @@ const booksSlice = createSlice({
         state.push(action.payload);
       })
       .addCase(removeBookAsync.fulfilled, (state, action) => {
-        const itemIdToRemove = action.payload;
-
-        return state.filter((book) => book.itemId !== itemIdToRemove);
+        return {
+          ...state,
+          isLoading: false,
+        };
       })
       .addCase(fetchBooksAsync.pending, (state) => {
 

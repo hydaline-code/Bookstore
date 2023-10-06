@@ -21,10 +21,10 @@ function BookList() {
     <div className="booklist">
       {booksArray.map((book) => (
         <BookCard
-          key={book.itemId}
+          key={book.item_id}
           title={book.title}
           author={book.author}
-          itemId={book.itemId}
+          itemId={book.item_id}
           handleRemove={handleRemove}
         />
       ))}
