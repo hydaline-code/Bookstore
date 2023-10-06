@@ -6,10 +6,8 @@ import Navigation from './navigation';
 import { addBookAsync, removeBookAsync } from '../redux/books/booksSlice';
 
 function BookContainer() {
-  // Use useSelector to access the books data from the Redux store
+ 
   const books = useSelector((state) => state.books);
-
-  // Get the dispatch function from Redux
   const dispatch = useDispatch();
 
   const handleAddBook = (newBook) => {

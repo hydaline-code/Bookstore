@@ -4,18 +4,6 @@ import axios from 'axios';
 const apiEndpoint = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/0vHIXZ1klByIbEZsVgzM/books';
 const api = axios.create();
 
-// export const fetchBooksAsync = createAsyncThunk('books/fetchBooks', async () => {
-//   try {
-//     const response = await api.get(apiEndpoint);
-//     const booksData = response.data;
-//     const booksArray = Object.values(booksData).flatMap((bookArray) => bookArray);
-
-//     return booksArray;
-//   } catch (error) {
-//     console.error('Error fetching books:', error);
-//     throw error;
-//   }
-// });
 export const fetchBooksAsync = createAsyncThunk('books/fetchBooks', async () => {
   try {
     const response = await api.get(apiEndpoint);
