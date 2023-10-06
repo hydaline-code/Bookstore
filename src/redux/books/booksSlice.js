@@ -24,14 +24,18 @@ export const fetchBooksAsync = createAsyncThunk('books/fetchBooks', async () => 
 });
 
 // Create async thunk for adding a book
-export const addBookAsync = createAsyncThunk('books/addBook', async (book) => {
+export const addBookAsync = createAsyncThunk('books/addBook', async ({
+  title, author, category, item_id,
+}) => {
   try {
-    const response = await api.post(apiEndpoint, { book });
+    const response = await api.post(apiEndpoint, {
+      title, author, category, item_id,
+    });
     return response.data;
   } catch (error) {
     console.error('Error adding book:', error);
-    throw error; // Rethrow the error to handle it in the component
-  }
+    throw error;
+  }
 });
 
 

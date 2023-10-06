@@ -16,12 +16,21 @@ function BookForm() {
     }
 
     try {
-      await dispatch(addBookAsync({ title, author }));
+      const timestamp = Date.now();
+      const bookData = {
+        title,
+        author,
+        item_id: timestamp.toString(),
+        category: 'Category',
+      };
+
+      await dispatch(addBookAsync(bookData));
       setTitle('');
       setAuthor('');
       setErrorMessage('');
       await dispatch(fetchBooksAsync());
     } catch (error) {
+      console.error('Error adding book:', error);
       setErrorMessage('Error adding book. Please try again later.');
     }
   };
@@ -49,9 +58,7 @@ function BookForm() {
   );
 }
 
-export default BookForm;
-  
-
+export default BookForm;
 
 // import React, { useState } from 'react';
 // import { useDispatch } from 'react-redux';
