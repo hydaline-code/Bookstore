@@ -2,7 +2,7 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import { removeBookAsync } from '../redux/books/booksSlice';
 
-function BookCard({ title, author, itemId }) {
+const BookCard = ({ title, author, itemId }) => {
   const progress = 50;
   const currentChapter = 'Chapter 3';
   const lesson = 'Lesson 7';
@@ -47,6 +47,6 @@ function BookCard({ title, author, itemId }) {
       </div>
     </div>
   );
-}
+};
 
 export default BookCard;

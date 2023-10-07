@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { fetchBooksAsync } from '../redux/books/booksSlice';
 import BookCard from './book';
 
-function BookList() {
+const BookList = () => {
   const booksObject = useSelector((state) => state.books.books);
   const dispatch = useDispatch();
 
@@ -25,6 +25,6 @@ function BookList() {
       ))}
     </div>
   );
-}
+};
 
 export default BookList;

@@ -5,7 +5,7 @@ import BookForm from './bookForm';
 import Navigation from './navigation';
 import { removeBookAsync } from '../redux/books/booksSlice';
 
-function BookContainer() {
+const BookContainer = () => {
   const books = useSelector((state) => state.books);
   const dispatch = useDispatch();
 
@@ -27,6 +27,6 @@ function BookContainer() {
 
     </div>
   );
-}
+};
 
 export default BookContainer;

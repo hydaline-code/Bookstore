@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { addBookAsync } from '../redux/books/booksSlice';
 
-function BookForm() {
+const BookForm = () => {
   const dispatch = useDispatch();
   const [title, setTitle] = useState('');
   const [author, setAuthor] = useState('');
@@ -54,6 +54,6 @@ function BookForm() {
       {errorMessage && <p>{errorMessage}</p>}
     </div>
   );
-}
+};
 
 export default BookForm;
