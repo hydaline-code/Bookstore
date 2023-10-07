@@ -49,7 +49,7 @@ const BookForm = () => {
           value={author}
           onChange={(e) => setAuthor(e.target.value)}
         />
-        <button type="submit">Add</button>
+        <button type="submit">Add a Book</button>
       </form>
       {errorMessage && <p>{errorMessage}</p>}
     </div>

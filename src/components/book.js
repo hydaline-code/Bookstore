@@ -6,7 +6,6 @@ import { removeBookAsync } from '../redux/books/booksSlice';
 const BookCard = ({ title, author, itemId }) => {
   const progress = 50;
   const currentChapter = 'Chapter 3';
-  const lesson = 'Lesson 7';
 
   const dispatch = useDispatch();
   const handleRemove = (itemId) => {
@@ -19,20 +18,26 @@ const BookCard = ({ title, author, itemId }) => {
         <h2 className="book-title">{title}</h2>
         <p className="book-author">{author}</p>
         <div className="bookbuttons">
-          <button className="leftButton" type="button">Comment</button>
+          <button className="leftButton comment" type="button"> Comment </button>
           <button
+            className="leftButton"
             type="button"
             onClick={() => handleRemove(itemId)}
           >
+            <span className="verticalline" />
             Delete
           </button>
-          <button className="leftButton" type="button">Edit</button>
+          <button className="leftButton" type="button">
+            {' '}
+            <span className="verticalline" />
+            Edit
+          </button>
         </div>
       </div>
 
       <div className="progress-bar">
         <div className="Oval-2" />
-        <span className="-Percent-Complete Text-Style-5">
+        <span className="-Percent-Complete">
           {progress}
           %
           <p className="state">completed</p>
@@ -41,10 +46,9 @@ const BookCard = ({ title, author, itemId }) => {
 
       <div className="vertical-line" />
       <div className="chapter-details">
-        <span className="chapter-label">Current Chapter:</span>
+        <span className="chapter-label">CURRENT CHAPTER :</span>
         <span className="chapter-info">{currentChapter}</span>
-        <span className="lesson-label">Current Lesson:</span>
-        <span className="lesson-info">{lesson}</span>
+        <button type="submit" className="lesson-info">Update Progress</button>
       </div>
     </div>
   );
