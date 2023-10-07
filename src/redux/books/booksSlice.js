@@ -16,7 +16,7 @@ export const fetchBooksAsync = createAsyncThunk(
       }));
       return booksArray;
     } catch (error) {
-      throw error;
+      return error;
     }
   },
 );
@@ -33,10 +33,10 @@ export const addBookAsync = createAsyncThunk(
         category,
         item_id: itemId,
       };
-      const response = await api.post(apiEndpoint, data);
+      await api.post(apiEndpoint, data);
       return data;
     } catch (error) {
-      throw error;
+      return error;
     }
   },
 );
@@ -44,7 +44,7 @@ export const addBookAsync = createAsyncThunk(
 export const removeBookAsync = createAsyncThunk(
   'books/removeBook',
   async (itemId) => {
-    const response = await api.delete(`${apiEndpoint}/${itemId}`);
+    await api.delete(`${apiEndpoint}/${itemId}`);
     return itemId;
   },
 );

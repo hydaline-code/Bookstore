@@ -1,5 +1,6 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
+import PropTypes from 'prop-types';
 import { removeBookAsync } from '../redux/books/booksSlice';
 
 const BookCard = ({ title, author, itemId }) => {
@@ -47,6 +48,12 @@ const BookCard = ({ title, author, itemId }) => {
       </div>
     </div>
   );
+};
+
+BookCard.propTypes = {
+  title: PropTypes.string.isRequired,
+  author: PropTypes.string.isRequired,
+  itemId: PropTypes.string.isRequired,
 };
 
 export default BookCard;

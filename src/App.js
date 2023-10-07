@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  BrowserRouter as Router, Route, Routes, NavLink,
+  BrowserRouter as Router, Route, Routes,
 } from 'react-router-dom';
 import './App.css';
 import Bookpage from './pages/bookpage';
