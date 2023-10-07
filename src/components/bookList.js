@@ -1,14 +1,22 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
-import Book from './book';
+import React, { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { fetchBooksAsync } from '../redux/books/booksSlice';
+import BookCard from './book';
 
-function BookList() {
-  const books = useSelector((state) => state.books);
+const BookList = () => {
+  const booksObject = useSelector((state) => state.books.books);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchBooksAsync());
+  }, [dispatch]);
+
+  const booksArray = Object.values(booksObject);
 
   return (
     <div className="booklist">
-      {books.map((book) => (
-        <Book
+      {booksArray.map((book) => (
+        <BookCard
           key={book.item_id}
           title={book.title}
           author={book.author}
@@ -17,6 +25,6 @@ function BookList() {
       ))}
     </div>
   );
-}
+};
 
 export default BookList;

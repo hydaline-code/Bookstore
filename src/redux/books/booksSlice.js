@@ -1,39 +1,72 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import axios from 'axios';
 
-const initialState = [
-  {
-    item_id: 'item1',
-    title: 'The Great Gatsby',
-    author: 'John Smith',
-    category: 'Fiction',
+const apiEndpoint = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/0vHIXZ1klByIbEZsVgzM/books';
+const api = axios.create();
+
+export const fetchBooksAsync = createAsyncThunk(
+  'books/fetchBooks',
+  async () => {
+    try {
+      const response = await api.get(apiEndpoint);
+      const booksData = response.data;
+      const booksArray = Object.keys(booksData).map((key) => ({
+        item_id: key,
+        ...booksData[key][0],
+      }));
+      return booksArray;
+    } catch (error) {
+      return error;
+    }
   },
-  {
-    item_id: 'item2',
-    title: 'Anna Karenina',
-    author: 'Leo Tolstoy',
-    category: 'Fiction',
+);
+
+export const addBookAsync = createAsyncThunk(
+  'books/addBook',
+  async ({
+    title, author, category, item_id: itemId,
+  }) => {
+    try {
+      const data = {
+        title,
+        author,
+        category,
+        item_id: itemId,
+      };
+      await api.post(apiEndpoint, data);
+      return data;
+    } catch (error) {
+      return error;
+    }
   },
-  {
-    item_id: 'item3',
-    title: 'The Selfish Gene',
-    author: 'Richard Dawkins',
-    category: 'Nonfiction',
+);
+
+export const removeBookAsync = createAsyncThunk(
+  'books/removeBook',
+  async (itemId) => {
+    await api.delete(`${apiEndpoint}/${itemId}`);
+    return itemId;
   },
-];
+);
 
 const booksSlice = createSlice({
   name: 'books',
-  initialState,
-  reducers: {
-    addBook: (state, action) => {
-      state.push(action.payload);
-    },
-    removeBook: (state, action) => {
-      const itemId = action.payload;
-      return state.filter((book) => book.item_id !== itemId);
-    },
+  initialState: { books: [], isLoading: true },
+  reducers: {},
+  extraReducers: (builder) => {
+    builder
+      .addCase(fetchBooksAsync.fulfilled, (state, action) => {
+        state.books = action.payload;
+      })
+      .addCase(addBookAsync.fulfilled, (state, action) => {
+        state.books.push(action.payload);
+      })
+      .addCase(removeBookAsync.fulfilled, (state, action) => {
+        state.books = state.books.filter(
+          (book) => book.item_id !== action.payload,
+        );
+      });
   },
 });
 
-export const { addBook, removeBook } = booksSlice.actions;
 export default booksSlice.reducer;

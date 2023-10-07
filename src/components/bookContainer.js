@@ -3,21 +3,14 @@ import { useSelector, useDispatch } from 'react-redux';
 import BookList from './bookList';
 import BookForm from './bookForm';
 import Navigation from './navigation';
-import { addBook, removeBook } from '../redux/books/booksSlice';
+import { removeBookAsync } from '../redux/books/booksSlice';
 
-function BookContainer() {
-  // Use useSelector to access the books data from the Redux store
+const BookContainer = () => {
   const books = useSelector((state) => state.books);
-
-  // Get the dispatch function from Redux
   const dispatch = useDispatch();
 
-  const handleAddBook = (newBook) => {
-    dispatch(addBook(newBook));
-  };
-
   const handleDeleteBook = (book) => {
-    dispatch(removeBook(book));
+    dispatch(removeBookAsync(book));
   };
 
   return (
@@ -29,11 +22,11 @@ function BookContainer() {
       </div>
 
       <div className="panel">
-        <BookForm onAdd={handleAddBook} />
+        <BookForm />
       </div>
 
     </div>
   );
-}
+};
 
 export default BookContainer;

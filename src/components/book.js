@@ -1,17 +1,16 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
-import { removeBook } from '../redux/books/booksSlice';
+import { removeBookAsync } from '../redux/books/booksSlice';
 
-function BookCard({ title, author, itemId }) {
+const BookCard = ({ title, author, itemId }) => {
   const progress = 50;
   const currentChapter = 'Chapter 3';
   const lesson = 'Lesson 7';
 
   const dispatch = useDispatch();
-
   const handleRemove = (itemId) => {
-    dispatch(removeBook(itemId));
+    dispatch(removeBookAsync(itemId));
   };
 
   return (
@@ -34,14 +33,13 @@ function BookCard({ title, author, itemId }) {
       <div className="progress-bar">
         <div className="Oval-2" />
         <span className="-Percent-Complete Text-Style-5">
-
           {progress}
           %
           <p className="state">completed</p>
         </span>
-
       </div>
 
+      <div className="vertical-line" />
       <div className="chapter-details">
         <span className="chapter-label">Current Chapter:</span>
         <span className="chapter-info">{currentChapter}</span>
@@ -50,7 +48,7 @@ function BookCard({ title, author, itemId }) {
       </div>
     </div>
   );
-}
+};
 
 BookCard.propTypes = {
   title: PropTypes.string.isRequired,

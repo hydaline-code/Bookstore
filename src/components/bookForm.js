@@ -1,30 +1,36 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { v4 as uuidv4 } from 'uuid';
-import { addBook } from '../redux/books/booksSlice';
+import { addBookAsync } from '../redux/books/booksSlice';
 
-function BookForm() {
+const BookForm = () => {
   const dispatch = useDispatch();
   const [title, setTitle] = useState('');
   const [author, setAuthor] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Create new book object with a unique itemId
-    const newBook = {
-      itemId: uuidv4(),
-      title,
-      author,
-    };
-    // Dispatch the addBook action with the new book data
-    dispatch(addBook(newBook));
-    // clear the form fields after inputs
-    setTitle('');
-    setAuthor('');
-  };
+    if (!title || !author) {
+      setErrorMessage('Please fill in all the fields before adding the book.');
+      return;
+    }
 
-  const handleAddBook = (newBook) => {
-    dispatch(addBook(newBook));
+    try {
+      const timestamp = Date.now();
+      const bookData = {
+        title,
+        author,
+        item_id: timestamp.toString(),
+        category: 'Category',
+      };
+
+      await dispatch(addBookAsync(bookData));
+      setTitle('');
+      setAuthor('');
+      setErrorMessage('');
+    } catch (error) {
+      setErrorMessage('Error adding book. Please try again later.');
+    }
   };
 
   return (
@@ -43,10 +49,11 @@ function BookForm() {
           value={author}
           onChange={(e) => setAuthor(e.target.value)}
         />
-        <button type="submit" onClick={handleAddBook}>Add</button>
+        <button type="submit">Add</button>
       </form>
+      {errorMessage && <p>{errorMessage}</p>}
     </div>
   );
-}
+};
 
 export default BookForm;

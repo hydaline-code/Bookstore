@@ -265,20 +265,25 @@
 } */
 
 .Oval-2 {
-  width: 3.25rem;
-  height: 3.25rem;
   border-radius: 50%;
-  border: 5px solid gray;
-  border-image:
-    conic-gradient(
-      rgb(34, 83, 198) 0% 50%,
-      gray 50% 100%
-    ) 1;
+  width: 4.25rem;
+  height: 4.25rem;
+  border: 5px solid #307bbe;
+  border-left-color: #e8e8e8;
+  transform: rotate(45deg);
 }
 
 .chapter-details {
   display: flex;
   flex-direction: column;
+  margin-right: 2rem;
+}
+
+.vertical-line {
+  display: inline-block;
+  border-left: 1px solid #ccc;
+  margin-left: 12%;
+  height: 120px;
 }
 
 .bookbuttons {
@@ -313,14 +318,4 @@
   line-height: normal;
   letter-spacing: normal;
   color: var(--black-two);
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(360deg);
-  }
 }
