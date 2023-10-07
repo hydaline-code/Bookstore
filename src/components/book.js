@@ -15,8 +15,10 @@ const BookCard = ({ title, author, itemId }) => {
   return (
     <div className="book-card">
       <div className="book-details">
+        <div className='book'>
         <h2 className="book-title">{title}</h2>
         <p className="book-author">{author}</p>
+        </div>
         <div className="bookbuttons">
           <button className="leftButton comment" type="button"> Comment </button>
           <button
@@ -28,7 +30,6 @@ const BookCard = ({ title, author, itemId }) => {
             Delete
           </button>
           <button className="leftButton" type="button">
-            {' '}
             <span className="verticalline" />
             Edit
           </button>

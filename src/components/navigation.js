@@ -13,6 +13,7 @@ const Navigation = () => (
     <div className="user">
       <FontAwesomeIcon className="icon" icon={faUser} />
     </div>
+    
   </div>
 );
 
