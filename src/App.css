@@ -1,17 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Slab:wght@300&display=swap');
+
 .App {
   text-align: center;
   position: relative;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
 }
 
 .App-header {
@@ -25,13 +16,6 @@
   color: white;
 }
 
-.page h1 {
-  margin-bottom: 10px;
-  font-size: 18px;
-  font-weight: bold;
-  background: linear-gradient(45deg, #b3936e, #fb4286);
-}
-
 .App-link {
   color: #61dafb;
 }
@@ -39,9 +23,10 @@
 .header {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
   background-color: #fff;
   height: 3rem;
-  border-bottom: solid rgb(137, 137, 137) 2px;
+  border-bottom: solid rgb(249, 249, 249) 2px;
   padding-top: 1rem;
 }
 
@@ -63,11 +48,10 @@
 .panel-bg {
   width: 70.5rem;
   height: 30.563rem;
-  margin: 0 2.5rem 2rem 4rem;
+  margin: 0.5rem 2.5rem 2rem 4rem;
   border-radius: 4px;
   box-shadow: 0 0 60px 0 rgba(0, 0, 0, 0.05);
   background-color: #fafafa;
-  border: solid 1px rgb(48, 48, 48);
 }
 
 .Bookstore-CMS {
@@ -91,13 +75,14 @@
 
 .book-card {
   display: flex;
-  background-color: hsla(0, 0%, 95%, 0.92);
-  text-align: left;
+  background-color: hsla(0, 0%, 98%, 0.92);
   border-radius: 4px;
+  border: solid rgb(212, 212, 212) 1px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   align-items: center;
   justify-content: space-evenly;
-  border-bottom: 1.5px solid #e89c9c;
+  margin-top: 1rem;
+  padding: 1rem;
 }
 
 .bookbuttons button {
@@ -112,18 +97,31 @@
   font-weight: bold;
 }
 
-.book-card p {
-  margin: 8px 0;
+.book-card .leftButton {
   color: #4386bf;
+  border: none;
+  width: 4.563rem;
+  height: 1.188rem;
+  font-weight: 300;
+  letter-spacing: normal;
+  font-family: 'Roboto Slab', serif;
+  font-size: 0.875rem;
+  background: none;
 }
 
-.book-card button {
-  background-color: #4386bf;
-  color: white;
-  border: none;
-  padding: 8px 12px;
-  border-radius: 4px;
-  cursor: pointer;
+.book {
+  flex-direction: column;
+  align-self: flex-start;
+  text-align: left;
+  margin-left: 1rem;
+}
+
+.addform {
+  position: absolute;
+  top: 110%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 89.2%;
+  margin-left: 4rem;
 }
 
 .addform button {
@@ -138,25 +136,18 @@
   margin-right: 0.3rem;
 }
 
-.book-card button:hover {
-  background-color: #396475;
-}
-
 /* BookForm.css */
-
-.addform {
-  position: absolute;
-  top: 99.5%;
-  border-top: solid 1px salmon;
-  background-color: #efdfdf;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  width: 88.1%;
-}
-
 .addform h4 {
   margin-bottom: 10px;
-  font-size: 18px;
+  margin-left: 0.5rem;
   font-weight: bold;
+  text-align: left;
+  width: 10.875rem;
+  height: 1.5rem;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  letter-spacing: -0.18px;
+  color: #888;
 }
 
 .addform form {
@@ -196,73 +187,36 @@
 }
 
 .book-author {
-  font-size: 14px;
-  color: #666;
+  width: 6.688rem;
+  height: 1.188rem;
+  margin: 0.25rem 0 0;
+  font-size: 0.875rem;
+  font-weight: 300;
+  color: #4386bf;
 }
 
 .progress-bar {
   display: flex;
   margin: 0 0 0.6rem 10rem;
+  color: #666;
   position: relative;
 }
 
 .progress-percentage {
   font-size: 10px;
-  color: #666;
   margin-left: 5px;
 }
 
 .state {
   position: absolute;
-  top: 16px;
-}
-
-/* .Oval-2 {
-  width: 4.25rem;
-  height: 4.25rem;
-  border-style: solid;
-  border-width: 5px;
-  border-image-source: linear-gradient(to bottom, green, #030303);
-  border-image-slice: 1;
-  border-radius: 50%;
-} */
-
-/* .Oval-2 {
-  width: 4.25rem;
-  height: 4.25rem;
-  border-radius: 50%;
-  box-shadow:
-    0 3px gray 0 5px green;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.progress-percentage {
-  font-size: 12px;
+  font-family: 'Montserrat', sans-serif;
+  width: 5rem;
+  height: 1.125rem;
+  opacity: 0.5;
+  font-size: 0.875rem;
   color: #666;
-  margin-left: 5px;
-} */
-
-/* .Oval-2 {
-  width: 4.25rem;
-  height: 4.25rem;
-  position: relative;
-  border-radius: 50%;
-  background: conic-gradient(
-    green 0% 50%,
-    transparent 50% 100%
-  );
-  box-shadow: 0 0 0 5px #030303;
-  justify-content: center;
-  align-items: center;
+  top: 2rem;
 }
-
-.progress-percentage {
-  font-size: 12px;
-  color: #666;
-  margin-left: 5px;
-} */
 
 .Oval-2 {
   border-radius: 50%;
@@ -271,6 +225,21 @@
   border: 5px solid #307bbe;
   border-left-color: #e8e8e8;
   transform: rotate(45deg);
+}
+
+.user {
+  margin: 0  4rem 3rem 0;
+  border-radius: 50%;
+  border: solid 1px rgb(208, 208, 208);
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+.icon {
+  padding-top: 0.52rem;
+  color: #0290ff;
+  font-size: 1.2rem;
+  border-color: #121212;
 }
 
 .chapter-details {
@@ -283,7 +252,18 @@
   display: inline-block;
   border-left: 1px solid #ccc;
   margin-left: 12%;
-  height: 120px;
+  height: 110px;
+}
+
+.verticalline {
+  display: inline-block;
+  border-left: 1px solid #ccc;
+  height: 20px;
+  margin-right: 1rem;
+}
+
+.comment {
+  margin-top: 0.3rem;
 }
 
 .bookbuttons {
@@ -295,27 +275,37 @@
   font-size: 14px;
   font-weight: bold;
   margin-bottom: 5px;
+  color: #121212;
+  font-family: 'Roboto Slab', serif;
 }
 
-.chapter-info,
-.lesson-info {
-  font-size: 14px;
+.chapter-label,
+.chapter-info {
+  text-align: left;
+}
+
+.chapter-label {
   color: #666;
-  margin-bottom: 10px;
 }
 
-.scrollable-container {
-  overflow-y: auto; /* Add a vertical scrollbar when content exceeds container height */
-  max-height: 400px; /* Define a maximum height for the container */
+.lesson-info {
+  border-radius: 3px;
+  color: #fff;
+  margin-top: 1rem;
+  width: 11.5rem;
+  height: 2.063rem;
+  font-family: 'Roboto Slab', serif;
+  font-size: 0.813rem;
+  font-weight: 300;
+  background-color: #0290ff;
+  border: none;
 }
 
 .-Percent-Complete {
   margin: 0.063rem 5.75rem 0 0.688rem;
   font-size: 2rem;
-  font-weight: normal;
-  font-stretch: normal;
   font-style: normal;
   line-height: normal;
   letter-spacing: normal;
-  color: var(--black-two);
+  color: #121212;
 }
