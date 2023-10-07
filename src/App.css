@@ -276,6 +276,14 @@
 .chapter-details {
   display: flex;
   flex-direction: column;
+  margin-right: 2rem;
+}
+
+.vertical-line {
+  display: inline-block;
+  border-left: 1px solid #ccc;
+  margin-left: 12%;
+  height: 120px;
 }
 
 .bookbuttons {

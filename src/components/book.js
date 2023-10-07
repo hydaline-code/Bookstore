@@ -44,6 +44,7 @@ function BookCard({ title, author, itemId }) {
         </span>
       </div>
 
+      <div className="vertical-line" />
       <div className="chapter-details">
         <span className="chapter-label">Current Chapter:</span>
         <span className="chapter-info">{currentChapter}</span>
