@@ -1,19 +1,15 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { fetchBooksAsync, removeBookAsync } from '../redux/books/booksSlice';
+import { fetchBooksAsync } from '../redux/books/booksSlice';
 import BookCard from './book';
 
 function BookList() {
-  const booksObject = useSelector((state) => state.books);
+  const booksObject = useSelector((state) => state.books.books);
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(fetchBooksAsync());
   }, [dispatch]);
-
-  const handleRemove = (itemId) => {
-    dispatch(removeBookAsync(itemId));
-  };
 
   const booksArray = Object.values(booksObject);
 
@@ -25,7 +21,6 @@ function BookList() {
           title={book.title}
           author={book.author}
           itemId={book.item_id}
-          handleRemove={handleRemove}
         />
       ))}
     </div>

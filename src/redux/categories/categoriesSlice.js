@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-  // initializing an empty array of book
+
   categories: [],
 };
 const categoriesSlice = createSlice({
@@ -9,7 +9,7 @@ const categoriesSlice = createSlice({
   initialState,
   reducers: {
     checkstatus: (state) => state,
-    // checking the categories
+
   },
 
 });

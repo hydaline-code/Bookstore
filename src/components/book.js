@@ -1,7 +1,6 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useDispatch } from 'react-redux';
-// import PropTypes from 'prop-types';
-import { fetchBooksAsync, removeBookAsync } from '../redux/books/booksSlice';
+import { removeBookAsync } from '../redux/books/booksSlice';
 
 function BookCard({ title, author, itemId }) {
   const progress = 50;
@@ -9,11 +8,6 @@ function BookCard({ title, author, itemId }) {
   const lesson = 'Lesson 7';
 
   const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(fetchBooksAsync());
-  }, [dispatch]);
-
   const handleRemove = (itemId) => {
     dispatch(removeBookAsync(itemId));
   };
@@ -54,11 +48,5 @@ function BookCard({ title, author, itemId }) {
     </div>
   );
 }
-
-// BookCard.propTypes = {
-//   title: PropTypes.string.isRequired,
-//   author: PropTypes.string.isRequired,
-//   itemId: PropTypes.string.isRequired,
-// };
 
 export default BookCard;

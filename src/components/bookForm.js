@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { addBookAsync, fetchBooksAsync } from '../redux/books/booksSlice';
+import { addBookAsync } from '../redux/books/booksSlice';
 
 function BookForm() {
   const dispatch = useDispatch();
@@ -28,9 +28,7 @@ function BookForm() {
       setTitle('');
       setAuthor('');
       setErrorMessage('');
-      await dispatch(fetchBooksAsync());
     } catch (error) {
-      // console.error('Error adding book:', error);
       setErrorMessage('Error adding book. Please try again later.');
     }
   };
